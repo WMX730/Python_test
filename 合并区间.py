@@ -4,7 +4,8 @@
 例如：输入：intervals = [[1,3],[2,6],[8,10],[15,18]]  输出：[[1,6],[8,10],[15,18]]
 '''
 
-intervals = [[1,3],[2,6],[8,10],[15,18]]
+# intervals = [[1,3],[2,6],[8,10],[15,18]]
+intervals = [[1,4],[0,0]]
 intervals.sort(key=lambda x: x[0])
 merged = []
 for interval in intervals:
@@ -14,4 +15,12 @@ for interval in intervals:
         merged[-1][1] = max(merged[-1][1], interval[1])
 print(merged)
 
-# 这是第二个版本
+
+# '''
+# 列表的一个用法:  not list # 判断列表是否为空
+# # 如果列表为空，返回True；如果列表不为空，返回False。
+# '''
+# list1 = [1,2,3,4,5]
+# list2 = []
+# print(not list1)  # False
+# print(not list2)  # True    

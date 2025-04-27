@@ -1,8 +1,8 @@
 # 迭代器 iter  节省空间
-# s = 'abcd'
-# it = iter(s)
-# for i in range(len(s)):
-#     print(next(it))
+s = 'abcd'
+it = iter(s)
+for i in range(len(s)):
+    print(next(it))
 
 # 生成器
 # 方式1：元组推导式
