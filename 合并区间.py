@@ -5,8 +5,6 @@
 '''
 
 intervals = [[1,3],[2,6],[8,10],[15,18]]
-print(intervals[0])
-
 intervals.sort(key=lambda x: x[0])
 merged = []
 for interval in intervals:
@@ -15,3 +13,5 @@ for interval in intervals:
     else:
         merged[-1][1] = max(merged[-1][1], interval[1])
 print(merged)
+
+# 这是第二个版本
