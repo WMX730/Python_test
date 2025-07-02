@@ -5,3 +5,6 @@ a.extend(b)
 print(a)
 print(len(a))
 print(a.index('is'))
+
+
+# 就是一个小测试
