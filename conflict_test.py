@@ -1,2 +1,2 @@
-a="wmx"
+name = "strat"
 
