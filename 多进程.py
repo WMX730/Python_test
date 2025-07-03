@@ -42,3 +42,10 @@ num_workers = multiprocessing.cpu_count()
 with multiprocessing.Pool(processes=num_workers) as pool:
     pool.map(process_singel_task, tasks)
 
+
+'''
+多进程统计
+   在多进程中,每个子进程都是独立内存空间,不能直接享有变量
+   让每个进程返回一个状态,主进程汇总
+'''
+
