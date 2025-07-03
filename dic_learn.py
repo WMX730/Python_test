@@ -11,8 +11,10 @@ for a, b in dict.items():
     print(a)
     print(b)
 
-for k in dict.keys():
+print("==========")
+
+for k in dict.keys():    # .keys()返回所有的key
     print(k)
-for v in dict.values():
+for v in dict.values():  # .values()返回所有的value
     print(v)
 
