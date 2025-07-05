@@ -7,26 +7,25 @@
 
 
 # # 类
-class Person:
-    __data = "不能访问的私有数据"
-    _internal_data = "私有数据"  # 私有属性
-    public_data = "公有数据"    # 公有属性
-    def __init__(self, name, age): # 构造函数，创建对象时会自动调用
-        self.name = name # 属性
-        self.age = age   # 属性
+# class Person:
+#     __data = "不能访问的私有数据"
+#     _internal_data = "私有数据"  # 私有属性
+#     public_data = "公有数据"    # 公有属性
+#     def __init__(self, name, age): # 构造函数，创建对象时会自动调用
+#         self.name = name # 属性
+#         self.age = age   # 属性
 
-    def say_hello(self):  # 方法
-        print(f"你好，我叫{self.name}，今年{self.age}岁")
+#     def say_hello(self):  # 方法
+#         print(f"你好，我叫{self.name}，今年{self.age}岁")
 
-p1 = Person("小明", 18)  # 创建一个对象
-p1.say_hello()           # 调用对象的方法
-print(p1.name)                  # 访问对象的属性
-print(p1.public_data)
-print(p1._internal_data) 
-# print(p1.__data)       # 访问会报错
-print(p1._Person__data)  # 正确访问私有属性的方式
+# p1 = Person("小明", 18)  # 创建一个对象
+# p1.say_hello()           # 调用对象的方法
+# print(p1.name)                  # 访问对象的属性
+# print(p1.public_data)
+# print(p1._internal_data) 
+# # print(p1.__data)       # 访问会报错
+# print(p1._Person__data)  # 正确访问私有属性的方式
  
-
 
 
 # # 继承（子类）
@@ -41,29 +40,32 @@ print(p1._Person__data)  # 正确访问私有属性的方式
 
 
 
-# # @classmethod使用
-# '''
-# @classmethod
-# def 方法名(cls):
-# '''
-# class Book:
-#     category = "小说"  # 类属性
+# @classmethod使用  装饰器，表示下面定义的函数是一个类方法
+'''
+@classmethod  
+def 方法名(cls):
+'''
+class Book:
+    category = "小说"  # 类属性
 
-#     def __init__(self,title):
-#         self.title = title
+    def __init__(self,title):
+        self.title = title
     
-#     def print_title(self):
-#         print(f"书名：{self.title}")
-#         print(f"类别：{self.category}")  # 访问类属性
+    def print_title(self):
+        print(f"书名：{self.title}")
+        print(f"类别：{self.category}")  # 访问类属性
 
-#     @classmethod
-#     def print_category(cls,new_category):  # 类方法
-#         # print(f"类别：{cls.category}")  # cls代表类本身，可以访问类属性和类方法
-#         cls.category = new_category  # 修改类属性
+    @classmethod
+    def print_category(cls,new_category):  # 类方法
+        # print(f"类别：{cls.category}")  # cls代表类本身，可以访问类属性和类方法
+        cls.category = new_category  # 修改类属性
 
-# b = Book("三体")
-# b.print_title()  
-# b.category = "科幻小说"  #只能在外部修改实例属性，不能修改类属性
-# print(b.category)
-# Book.print_category("科幻小说")  
-# print(b.category)
+b = Book("三体")
+b.print_title()  
+b.category = "科幻小说"  #只能在外部修改实例属性，不能修改类属性
+print(b.category)
+print(Book.category)
+b.print_title()  
+Book.print_category("科幻小说")  
+print(b.category)
+print(Book.category)
