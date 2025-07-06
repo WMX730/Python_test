@@ -62,10 +62,9 @@ class Book:
 
 b = Book("三体")
 b.print_title()  
-b.category = "科幻小说"  #只能在外部修改实例属性，不能修改类属性
-print(b.category)
-print(Book.category)
-b.print_title()  
+b.category = "科幻小说"  # 只能在外部修改实例属性，不能修改类属性
+print(b.category)       # 科幻小说
+print(Book.category)    # 小说，类属性没有被修改
 Book.print_category("科幻小说")  
-print(b.category)
-print(Book.category)
+print(b.category)      # 实例属性被修改了
+print(Book.category)   # 类属性被修改了
