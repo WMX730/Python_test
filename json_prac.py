@@ -20,5 +20,10 @@ import json
 
 data = {"name": "张三", "age": 20}
 
+# 写入JSON文件
 with open("user.json", "w", encoding="utf-8") as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
+
+# 读取JSON文件
+with open("user.json","r",encoding="utf-8") as f:
+    data = json.load(f)
