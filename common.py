@@ -24,6 +24,6 @@ class Person:
     def greet(self):
         return f"Hello, my name is {self.name} and I am {self.age} years old."
 person = Person("张三", 20)
-data = person.name
-data1 = person.greet()
+data = person.name       # 访问属性
+data1 = person.greet()   # 调用方法
 print(data1)
