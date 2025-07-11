@@ -1,17 +1,40 @@
-class Person:
-    nation = "China"    # 属性
+'''
+类方法 @classmethod
+'''
 
-    def __init__(self, name, age):  # 初始化，每次使用类创建新对象时都会自动调用该函数
-        # 将值赋给对象属性
+class User:
+    default_role = "普通用户"
+    def __init__(self, name, role=None):
         self.name = name
-        self.age = age
-        # self参数是对类的当前实例的引用，用于访问属于该类的变量
+        self.role = role or self.__class__.default_role
 
-    def get_nation(self):
-        print(self.nation)
+    def show_info(self):
+        print(f"我是 {self.name}，我的角色是：{self.role}")
 
-p1 = Person("Bill", 63)
-print(p1.name)
-print(p1.age)
-print(p1.nation)
-p1.get_nation()
+    @classmethod
+    def create_admin(cls, name):
+        return cls(name, role="管理员")
+
+    @classmethod
+    def create_guest(cls, name):
+        return cls(name, role="访客")
+
+    @classmethod
+    def create_user(cls, name):
+        return cls(name)
+    
+    @classmethod
+    def set_default_role(cls, new_role):
+        cls.default_role = new_role
+
+U1 = User.create_user("小明")
+U2 = User.create_admin("小红")
+U3 = User.create_guest("游客001")
+
+U1.show_info()
+U2.show_info()
+U3.show_info()
+
+User.set_default_role("测试用户")   # 利用@classmethod修改类属性
+U4 = User.create_user("小白")
+U4.show_info()
